@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>jQuery Memotest, feat. PHP &amp; CSS.</title>
+</head>
+<script type="text/javascript">
+
+    var startime = (new Date()).getTime();
+
+    /*
+     var startime=(new Date()).getTime();window.onunload=function(){
+     var x=(window.ActiveXObject)?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
+     x.open("GET","count.php?t="+(((new Date()).getTime()-startime)/1000),true);x.send(null)}
+     */
+
+    function test() {
+        var endTime = (((new Date()).getTime() - startime) / 1000);
+        var result = Math.floor(endTime);
+        console.log(result);
+        console.log(time_formatter(result));
+    }
+
+    function det_time(d) {
+        if (isDate(d)) {
+            var c_hour = d.getHours();
+            var c_min = d.getMinutes();
+            var c_sec = d.getSeconds();
+            var t = c_hour + ":" + c_min + ":" + c_sec;
+            return t;
+        }
+        else {
+            return det_time(new Date());
+        }
+    }
+
+
+    function time_formatter(sec) {
+
+        /*
+
+         var hr  = Math.floor(secs / 3600);
+         var min = Math.floor((secs - (hr * 3600))/60);
+         var sec = Math.floor(secs - (hr * 3600) -  (min * 60));
+
+         */
+
+        var day = Math.floor(sec / 86400);
+        var hr = Math.floor(sec / 3600);
+        var min = Math.floor((sec - (hr * 3600)) / 60);
+        var secs = Math.floor(sec - (hr * 3600) - (min * 60));
+
+
+        return "" + hr + " hour(s) " + min + " minute(s) " + secs + " seconds";
+    }
+
+
+    function isDate(dt) {
+        return Object.prototype.toString.call(dt) === "[object Date]";
+    }
+    /*
+     var then;
+     var sub;
+     setTimeout("console.log(formatSecondsAsTime(new Date().getTime()-now.getTime()));",3000);
+     */
+</script>
+<body>
+<input type="button" onclick="test_()" value="Button"/>
+</body>
+</html>

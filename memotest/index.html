@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<title>DB Memory Test Game</title>
+<link rel="stylesheet" type="text/css" media="all" href="../css/memotest.css">
+<link rel="stylesheet" type="text/css" media="all" href="../css/table.css">
+<script src="../js/jquery.1.6.4.min.js" type="text/javascript"></script>
+<script src="../js/jquery.timer.js" type="text/javascript"></script>
+<script src="../js/jqModal.js" type="text/javascript"></script>
+<script src="../js/timer.js" type="text/javascript"></script>
+<script src="../js/memotest.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+    $(function() {
+
+        // Assign onClick to items /  ('.ficha-cover').
+        $("#c-0").click(function () {
+            memotest('0', '16');
+        });
+        $("#c-1").click(function () {
+            memotest('1', '1');
+        });
+        $("#c-2").click(function () {
+            memotest('2', '8');
+        });
+        $("#c-3").click(function () {
+            memotest('3', '3');
+        });
+        $("#c-4").click(function () {
+            memotest('4', '4');
+        });
+        $("#c-5").click(function () {
+            memotest('5', '1');
+        });
+        $("#c-6").click(function () {
+            memotest('6', '5');
+        });
+        $("#c-7").click(function () {
+            memotest('7', '11');
+        });
+        $("#c-8").click(function () {
+            memotest('8', '17');
+        });
+        $("#c-9").click(function () {
+            memotest('9', '5');
+        });
+        $("#c-10").click(function () {
+            memotest('10', '12');
+        });
+        $("#c-11").click(function () {
+            memotest('11', '6');
+        });
+        $("#c-12").click(function () {
+            memotest('12', '14');
+        });
+        $("#c-13").click(function () {
+            memotest('13', '12');
+        });
+        $("#c-14").click(function () {
+            memotest('14', '7');
+        });
+        $("#c-15").click(function () {
+            memotest('15', '3');
+        });
+        $("#c-16").click(function () {
+            memotest('16', '6');
+        });
+        $("#c-17").click(function () {
+            memotest('17', '10');
+        });
+        $("#c-18").click(function () {
+            memotest('18', '11');
+        });
+        $("#c-19").click(function () {
+            memotest('19', '16');
+        });
+        $("#c-20").click(function () {
+            memotest('20', '9');
+        });
+        $("#c-21").click(function () {
+            memotest('21', '17');
+        });
+        $("#c-22").click(function () {
+            memotest('22', '2');
+        });
+        $("#c-23").click(function () {
+            memotest('23', '7');
+        });
+        $("#c-24").click(function () {
+            memotest('24', '18');
+        });
+        $("#c-25").click(function () {
+            memotest('25', '13');
+        });
+        $("#c-26").click(function () {
+            memotest('26', '9');
+        });
+        $("#c-27").click(function () {
+            memotest('27', '18');
+        });
+        $("#c-28").click(function () {
+            memotest('28', '2');
+        });
+        $("#c-29").click(function () {
+            memotest('29', '15');
+        });
+        $("#c-30").click(function () {
+            memotest('30', '15');
+        });
+        $("#c-31").click(function () {
+            memotest('31', '10');
+        });
+        $("#c-32").click(function () {
+            memotest('32', '8');
+        });
+        $("#c-33").click(function () {
+            memotest('33', '4');
+        });
+        $("#c-34").click(function () {
+            memotest('34', '13');
+        });
+        $("#c-35").click(function () {
+            memotest('35', '14');
+        });
+
+        getTopTenScores();
+
+    });
+
+</script>
+</head>
+
+<body>
+
+<div align="center">
+    <div class="memotest" style="width:600px;">
+        <h1><i><b>DB</b></i> Memory Game:</h1>
+
+        <div style="margin-top:5px; height:262px;">
+            <div class="ficha s-16" id="s-0">
+                <div class="ficha-cover c-16" id="c-0">&nbsp;</div>
+            </div>
+            <div class="ficha s-1" id="s-1">
+                <div class="ficha-cover c-1" id="c-1">&nbsp;</div>
+            </div>
+            <div class="ficha s-8" id="s-2">
+                <div class="ficha-cover c-8" id="c-2">&nbsp;</div>
+            </div>
+            <div class="ficha s-3" id="s-3">
+                <div class="ficha-cover c-3" id="c-3">&nbsp;</div>
+            </div>
+            <div class="ficha s-4" id="s-4">
+                <div class="ficha-cover c-4" id="c-4">&nbsp;</div>
+            </div>
+            <div class="ficha s-1" id="s-5">
+                <div class="ficha-cover c-1" id="c-5">&nbsp;</div>
+            </div>
+            <div class="ficha s-5" id="s-6">
+                <div class="ficha-cover c-5" id="c-6">&nbsp;</div>
+            </div>
+            <div class="ficha s-11" id="s-7">
+                <div class="ficha-cover c-11" id="c-7">&nbsp;</div>
+            </div>
+            <div class="ficha s-17" id="s-8">
+                <div class="ficha-cover c-17" id="c-8">&nbsp;</div>
+            </div>
+            <div class="ficha s-5" id="s-9">
+                <div class="ficha-cover c-5" id="c-9">&nbsp;</div>
+            </div>
+            <div class="ficha s-12" id="s-10">
+                <div class="ficha-cover c-12" id="c-10">&nbsp;</div>
+            </div>
+            <div class="ficha s-6" id="s-11">
+                <div class="ficha-cover c-6" id="c-11">&nbsp;</div>
+            </div>
+            <div class="ficha s-14" id="s-12">
+                <div class="ficha-cover c-14" id="c-12">&nbsp;</div>
+            </div>
+            <div class="ficha s-12" id="s-13">
+                <div class="ficha-cover c-12" id="c-13">&nbsp;</div>
+            </div>
+            <div class="ficha s-7" id="s-14">
+                <div class="ficha-cover c-7" id="c-14">&nbsp;</div>
+            </div>
+            <div class="ficha s-3" id="s-15">
+                <div class="ficha-cover c-3" id="c-15">&nbsp;</div>
+            </div>
+            <div class="ficha s-6" id="s-16">
+                <div class="ficha-cover c-6" id="c-16">&nbsp;</div>
+            </div>
+            <div class="ficha s-10" id="s-17">
+                <div class="ficha-cover c-10" id="c-17">&nbsp;</div>
+            </div>
+            <div class="ficha s-11" id="s-18">
+                <div class="ficha-cover c-11" id="c-18">&nbsp;</div>
+            </div>
+            <div class="ficha s-16" id="s-19">
+                <div class="ficha-cover c-16" id="c-19">&nbsp;</div>
+            </div>
+            <div class="ficha s-9" id="s-20">
+                <div class="ficha-cover c-9" id="c-20">&nbsp;</div>
+            </div>
+            <div class="ficha s-17" id="s-21">
+                <div class="ficha-cover c-17" id="c-21">&nbsp;</div>
+            </div>
+            <div class="ficha s-2" id="s-22">
+                <div class="ficha-cover c-2" id="c-22">&nbsp;</div>
+            </div>
+            <div class="ficha s-7" id="s-23">
+                <div class="ficha-cover c-7" id="c-23">&nbsp;</div>
+            </div>
+            <div class="ficha s-18" id="s-24">
+                <div class="ficha-cover c-18" id="c-24">&nbsp;</div>
+            </div>
+            <div class="ficha s-13" id="s-25">
+                <div class="ficha-cover c-13" id="c-25">&nbsp;</div>
+            </div>
+            <div class="ficha s-9" id="s-26">
+                <div class="ficha-cover c-9" id="c-26">&nbsp;</div>
+            </div>
+            <div class="ficha s-18" id="s-27">
+                <div class="ficha-cover c-18" id="c-27">&nbsp;</div>
+            </div>
+            <div class="ficha s-2" id="s-28">
+                <div class="ficha-cover c-2" id="c-28">&nbsp;</div>
+            </div>
+            <div class="ficha s-15" id="s-29">
+                <div class="ficha-cover c-15" id="c-29">&nbsp;</div>
+            </div>
+            <div class="ficha s-15" id="s-30">
+                <div class="ficha-cover c-15" id="c-30">&nbsp;</div>
+            </div>
+            <div class="ficha s-10" id="s-31">
+                <div class="ficha-cover c-10" id="c-31">&nbsp;</div>
+            </div>
+            <div class="ficha s-8" id="s-32">
+                <div class="ficha-cover c-8" id="c-32">&nbsp;</div>
+            </div>
+            <div class="ficha s-4" id="s-33">
+                <div class="ficha-cover c-4" id="c-33">&nbsp;</div>
+            </div>
+            <div class="ficha s-13" id="s-34">
+                <div class="ficha-cover c-13" id="c-34">&nbsp;</div>
+            </div>
+            <div class="ficha s-14" id="s-35">
+                <div class="ficha-cover c-14" id="c-35">&nbsp;</div>
+            </div>
+        </div>
+        <div>
+			<br />
+			<br />
+			<br />
+			<br />
+            Score Board: <a href="leaderboard.html" target="_self" title="LeaderBoard">Score Board</a>.
+        </div>
+        <br />
+        <br />
+        <span id="timer">00:00</span>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<!-- the table -->
+<div id="tableDiv" style="float: right;margin-right: 400px;">
+<table id="theTable" cellpadding="0" cellspacing="0" class="rowstyle-alt no-arrow sortcompletecallback-staticData-redraw">
+<thead>
+	<h1>Top 10 LeaderBoard</h1>
+	<br />
+<tr>
+  <th>name</th>
+  <th>time</th>
+</tr>
+</thead>
+<tbody id="tbBody">
+</tbody>
+</table>
+</div>
+
+<div class="jqmWindow jqmClose" id="win">
+    <img src="../img/128/22.png" border="0" style="float:left; margin:5px;"/>
+    <strong>Memotest passed!</strong>
+    <ul>
+        <li><h2>Enter Player Name :</h2></li>
+        <li><input type="text" value="unknown" id="username"/></li>
+        <li><a title="Play Again" onclick="saveTime()">Play Again!</a></li>
+    </ul>
+</div>
+</body>
+</html>

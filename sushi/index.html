@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../js/jquery.1.6.4.min.js"></script>
+        <script type="text/javascript" src="../js/sushi.js"></script>
+        <script type="text/javascript" src="../js/jqModal.js"></script>
+        <script type="text/javascript" src="../js/jquery.timer.js"></script>
+        <script type="text/javascript" src="../js/timer.js"></script>
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
+        <link rel="stylesheet" href="../css/table.css" type="text/css">
+        <title>JQuery Memory Game</title>
+        <script type="text/javascript">
+
+
+        $(function() {
+
+            $("img").hide();
+            $("#boxcard div").click(showCard);
+            randomizeCards();
+            getTopTenScores();
+        });
+        </script>
+    </head>
+    <body>
+        <div id="boxbutton">
+            <span class="link">
+                <span id="count">0</span>
+                Click
+            </span>
+            &nbsp;
+            <span id="timer" class="link">00:00</span>
+            &nbsp;
+            <a href="javascript:" class="link" onclick="resetGame();">Reset</a>
+            &nbsp;
+            <a href="leaderboard.html" class="link">LeaderBoard</a>
+        </div>
+        <div id="boxcard">
+            <div id="card1"><img src="../img/sushi/01.jpg" /></div>
+            <div id="card2"><img src="../img/sushi/02.jpg" /></div>
+            <div id="card3"><img src="../img/sushi/03.jpg" /></div>
+            <div id="card4"><img src="../img/sushi/04.jpg" /></div>
+            <div id="card5"><img src="../img/sushi/05.jpg" /></div>
+            <div id="card6"><img src="../img/sushi/06.jpg" /></div>
+            <div id="card7"><img src="../img/sushi/07.jpg" /></div>
+            <div id="card8"><img src="../img/sushi/08.jpg" /></div>
+            <div id="card9"><img src="../img/sushi/09.jpg" /></div>
+            <div id="card10"><img src="../img/sushi/10.jpg" /></div>
+            <div id="card11"><img src="../img/sushi/01.jpg" /></div>
+            <div id="card12"><img src="../img/sushi/02.jpg" /></div>
+            <div id="card13"><img src="../img/sushi/03.jpg" /></div>
+            <div id="card14"><img src="../img/sushi/04.jpg" /></div>
+            <div id="card15"><img src="../img/sushi/05.jpg" /></div>
+            <div id="card16"><img src="../img/sushi/06.jpg" /></div>
+            <div id="card17"><img src="../img/sushi/07.jpg" /></div>
+            <div id="card18"><img src="../img/sushi/08.jpg" /></div>
+            <div id="card19"><img src="../img/sushi/09.jpg" /></div>
+            <div id="card20"><img src="../img/sushi/10.jpg" /></div>
+        </div>
+        <div class="jqmWindow jqmClose" id="win">
+            <img id="dialogImg" src="../img/sushi/22.png" border="0" style="float:left; margin:5px;"/>
+            <span id="score"><strong>Memotest passed!</strong></span>
+            <ul>
+                <li><h2>Enter Player Name :</h2></li>
+                <li><input type="text" value="unknown" id="username"/></li>
+                <li><a title="Play Again" onclick="LogScore()">Play Again!</a></li>
+            </ul>
+        </div>
+        <!-- the table -->
+        <div id="tableDiv" style="float: right;margin-right: 5%;margin-top: -15%;">
+        <table id="theTable" cellpadding="0" cellspacing="0" class="rowstyle-alt no-arrow sortcompletecallback-staticData-redraw">
+        <thead>
+        	<h4>Top 10 Least amount of clicks</h4>
+        	<br />
+        <tr>
+          <th>name</th>
+          <th>clicks</th>
+        </tr>
+        </thead>
+        <tbody id="tbBody">
+        </tbody>
+        </table>
+        </div>
+    </body>
+</html>
